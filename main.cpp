@@ -135,7 +135,122 @@ int main()
             case 'U': cout<<"Es una vocal Minuscula"<<endl;
             default: cout<<"NO es una vocal"<<endl;
             }
+            break;
 
+        case 11:
+            int edad;
+            cout<<"Digite su edad: ";cin>>edad;
+
+            if(edad>=18 && edad<=25)cout<<"Su edad si esta entre los 25 y 18"<<endl;
+            else cout<<"Su edad no esta entre los 28 y 18"<<endl;
+            break;
+
+        case 12:
+            int num1,num2,num3,num4;
+            cout<<"Digite los 3 Numeros: ";cin>>num1>>num2>>num3;
+            cout<<"Ingrese el 4to numero: ";cin>>num4;
+
+            if(num1 == num4 || num2 == num4 || num3 == num4)cout<<"El numero 4 coincide con uno de los 3 anteriores"<<endl;
+            else cout<<"El numero 4 no coincide con ninguno de los anteriores"<<endl;
+
+            break;
+
+        case 13:
+            int numero,unidades,centenas,decenas,millar;
+            cout <<"Digite un numero: ";cin>>numero;
+            unidades = numero%10; numero /= 10;
+            decenas = numero%10; numero /= 10;
+            centenas = numero%10; numero /= 10;
+            millar = numero%10; numero /= 10;
+
+            switch (millar) {
+            case 1: cout <<"M"; break;
+            case 2: cout <<"MM"; break;
+            case 3: cout <<"MMM"; break;
+            }
+
+            switch (centenas){
+            case 1: cout<<"C"; break;
+            case 2: cout<<"CC"; break;
+            case 3: cout<<"CCC"; break;
+            case 4: cout<<"CD"; break;
+            case 5: cout<<"D"; break;
+            case 6: cout<<"DC"; break;
+            case 7: cout<<"DCC"; break;
+            case 8: cout<<"DCCC"; break;
+            case 9: cout<<"CM"; break;
+            }
+            switch (decenas){
+            case 1: cout<<"X"; break;
+            case 2: cout<<"XX"; break;
+            case 3: cout<<"XXX"; break;
+            case 4: cout<<"XL"; break;
+            case 5: cout<<"L"; break;
+            case 6: cout<<"LX"; break;
+            case 7: cout<<"LXX"; break;
+            case 8: cout<<"LXXX"; break;
+            case 9: cout<<"XC"; break;
+            }
+            switch (unidades){
+            case 1: cout<<"I"; break;
+            case 2: cout<<"II"; break;
+            case 3: cout<<"III"; break;
+            case 4: cout<<"IV"; break;
+            case 5: cout<<"V"; break;
+            case 6: cout<<"VI"; break;
+            case 7: cout<<"VII"; break;
+            case 8: cout<<"VIII"; break;
+            case 9: cout<<"IX"; break;
+            }
+            cout<<endl;
+            break;
+
+        case 14:
+            int mes;
+            cout<<"Ingrese el numero del mes: ";cin>>mes;
+            switch (mes) {
+            case 1:cout<<"Enero"<<endl;break;
+            case 2:cout<<"Febrero"<<endl;break;
+            case 3:cout<<"Marzo"<<endl;break;
+            case 4:cout<<"Abril"<<endl;break;
+            case 5:cout<<"Mayo"<<endl;break;
+            case 6:cout<<"Junio"<<endl;break;
+            case 7:cout<<"Julio"<<endl;break;
+            case 8:cout<<"Agosto"<<endl;break;
+            case 9:cout<<"Septiembre"<<endl;break;
+            case 10:cout<<"Octubre"<<endl;break;
+            case 11:cout<<"Noviembre"<<endl;break;
+            case 12:cout<<"Diciembre"<<endl;break;
+            default:cout<<"Numero incorrecto (Los mese van del 1 al 12"<<endl;break;
+            }
+            break;
+        case 15:
+            int saldo_inicial,opcion,dinero,retirar;
+            saldo_inicial = 1000;
+            cout<<"\t Bienvenido a su cajero vitual"<<endl;
+            cout<<"1.Ingresar dinero a la cuenta"<<endl;
+            cout<<"2:Retirar dinero"<<endl;
+            cout<<"3. Salir"<<endl;
+            cout<<"Opcion: "<<endl;
+            cin>>opcion;
+
+            switch (opcion) {
+            case 1:
+                cout<<"Ingrese la cantidad de dinero que desea ingresar: ";cin>>dinero;
+                saldo_inicial = saldo_inicial+dinero;
+                cout<<"Saldo actual: "<<saldo_inicial<<endl;
+                break;
+            case 2:
+                cout<<"Cuanto desea retirar: ";cin>>retirar;
+                if(retirar>saldo_inicial)cout<<"Saldo actual insuficiente"<<endl;
+                else{
+                    saldo_inicial = saldo_inicial-retirar;
+                    cout<<"Su saldo restante es de "<<saldo_inicial<<endl;
+                }
+                break;
+            case 3:cout<<"Hasta luego "<<endl;break;
+            }
+            break;
         default:
             i = 0;
             break;
