@@ -251,6 +251,174 @@ int main()
             case 3:cout<<"Hasta luego "<<endl;break;
             }
             break;
+
+        case 16:
+            int num;
+            cout<<"Ingrese el numero: ";cin>>num;
+            for(int i = 0; i <= 10;i++){
+                cout<<num<<" x "<<i<<" = "<<num*i<<endl;
+            }
+            break;
+
+        case 17:
+            int suma,cuadrado;
+            suma = 0;
+
+            for(int i = 1; i<=10;i++){
+                cuadrado = i*i;
+                suma += cuadrado;//Esto es igual que decir suma = suma+cuadrado
+            }
+            cout<<"La suma de los 10 primeros cuadrados es: "<<suma<<endl;
+            break;
+
+        case 18:
+            cout<<"Hello World"<<endl;
+
+            float tempA,tempM,tempB,Media,Max,Min;
+            Min = 100,Media=0;
+            for(int i=1; i<=24;i++){
+                if(i % 4 == 0){
+                    cout<<"Cual el la temeperatura mas alta registrada: ";cin>>tempA;
+                    cout<<"Cual el la temeperatura media registrada: ";cin>>tempM;
+                    cout<<"Cual el la temeperatura mas baja registrada: ";cin>>tempB;
+                    cout<<endl;
+
+                    Media += tempM;
+                    if(tempM > Max)Max= tempA;
+                    if(tempB < Min)Min = tempB;
+                }
+            }
+            cout<<"La temperatura media en el dia fue de:"<<Media/6<<endl;
+            cout<<"La temperatura Maxima fue de: "<<Max<<endl;
+            cout<<"La temaperatura minima fue de: "<<Min<<endl;
+            break;
+        case 19:
+            int num19,aux,suma19;
+            aux=1;suma19 = 0;
+
+            while(aux != 0){
+                cout<<"Digite un numero: ";cin>>num19;
+                if((num19 != 0 && ((num19>30) || (num19<20))))suma19 += num19;
+                else aux=0;
+            }
+            cout<<"la suma de los valores mayores a 0 es: "<<suma19<<endl;
+            break;
+
+         case 20:
+            int a20, b20,sum20;
+            cout<<"Ingrese un valor par a y b: ";cin>>a20>>b20;
+            sum20 = a20;
+            for(int i = 0; i<b20;i++){
+                sum20 = sum20*a20;
+            }
+            cout<<"A^B es igual a: "<<sum20<<endl;
+            break;
+
+        case 21:
+            int num21,suma21;
+            suma21= 0;
+            cout<<"Digite un numero: ";cin>>num21;
+
+            for(int i = 1;i<=num21;i++){
+                suma21 += i;
+            }
+            cout<<"La suma de los n numeros es: "<<suma21<<endl;
+            break;
+
+        case 22:
+            int num22,suma22;
+            suma22= 0;
+            cout<<"Digite un numero: ";cin>>num22;
+
+            for(int i= 1;i<num22 && i%2 != 0;i+=2){
+                suma22 += i;
+            }
+            cout<<"La suma de los n numeros impares +2n-1 es: "<<suma22+((2*num22)-1)<<endl;
+            break;
+
+        case 23:
+            int num23,mul23;
+            mul23=1;
+            cout<<"Digite el numero: ";cin>>num23;
+
+            for(int i = 1;i <= num23;i++ ){
+                mul23 *= i;//mul23 = mul23*i es lo mismo
+            }
+            cout<<"El factorial de "<<num23<<" es: "<<mul23<<endl;
+
+        case 24:
+            int num24,mul24,factorial;
+            mul24=1;
+            cout<<"Digite el numero: ";cin>>num24;
+
+            for(int i = 1;i <= num24;i++ ){
+                mul24 *= i;
+                factorial += mul24;
+            }
+            cout<<"La suma de los factoriales es: "<<factorial<<endl;
+            break;
+
+        case 25:
+            int num25,elevacion,sum;
+            sum=0;elevacion = 0;
+            cout<<"Ingrese un numero: ";cin>>num25;
+
+            for(int i=1;i<=num25;i++ ){
+            elevacion = pow(2, i);
+            sum += elevacion;
+            }
+            cout<<"La suma de la serie de suma de numeros es: "<<sum<<endl;
+            break;
+
+        case 26:
+            int num26,var;
+            bool flag;
+            var = 0;
+            flag = true;
+
+            cout<<"Ingrese un numero: ";cin>>num26;
+
+            for(int i = 1;i<=num26;i++){
+                if(flag){
+                    var += i;
+                    flag = false;
+                }
+                else{
+                    var -= i;
+                    flag = true;
+                }
+            }
+            cout<<"El resultado de la suma y resta de numeros es: "<<var<<endl;
+            break;
+
+        case 27:
+            int num27,x27,y27,z27;
+            x27=0;y27=1;z27=1;
+            cout<<"Ingrese un numero para la serie fibonacci: ";cin>>num27;
+
+            for(int i=0;i<num27;i++){
+            z27 = x27+y27;
+            cout<<z27<<" ";
+            x27 = y27;
+            y27 = z27;
+            }
+            break;
+
+        case 28:
+            int e1,e2,e3,contador1,contador2,contador3;
+            contador1=0;contador2=0;contador3=0;
+            for(int A=0; A < 5; A++){
+                cout<<"Ingres los 3 resultado del alumno "<<A<<" : ";cin>>e1>>e2>>e3;
+                if(e1 >= 3 && e2>= 3 && e3>=3)contador1++;
+                else if(e1 >= 3 || e2>= 3 || e3>=3)contador2++;
+                else if(e3>=3 && e2<3 && e1 <3)contador3++;
+            }
+            cout<<contador1<<" alumnos aprobaron todos los examenes"<<endl;
+            cout<<contador2<<" alumnos aprobaron al menos uno de los examenes"<<endl;
+            cout<<contador3<<" alumnos aprobaron solo el ultimo examenen"<<endl;
+
+            break;
+
         default:
             i = 0;
             break;
