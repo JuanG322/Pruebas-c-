@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-
+#include <time.h>>
 using namespace std;
 
 int main()
@@ -417,6 +417,39 @@ int main()
             cout<<contador2<<" alumnos aprobaron al menos uno de los examenes"<<endl;
             cout<<contador3<<" alumnos aprobaron solo el ultimo examenen"<<endl;
 
+            break;
+
+        case 29:
+            int num29,dato,contador;
+            contador=0;
+
+
+                srand(time(NULL));
+                dato = 1+rand()%(100);
+
+                do{
+                    cout<<"Digite un numero del 1 al 100: ";cin>>num29;
+
+                    if(num29>dato)cout<<"Digite un numero menor:"<<endl;
+                    else if(num29<dato)cout<<"Digite un numero mayor: "<<endl;
+                    contador++;
+                }while(num29 != dato);
+                cout<<"Adivinaste el numero te tomo "<<contador<<" intententos"<<endl;
+            break;
+
+        case 30:
+            int num30,i;
+            i=2;
+            cout<<"Ingres un numero: ";cin>>num30;
+            while(i<=num30){
+                if(num30%i==0){
+                    num30 = num30/i;
+                    cout<<i<<" ";
+                    i=2;
+                }
+                else i++;
+                }
+            cout<<endl;
             break;
 
         default:
